@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+</head>
+<script>
+    function haha() {
+        var num=new Array();
+        for(i=0;i<=9;i++){
+            num[i]=Number(document.getElementById("num"+i+"").value);
+        }
+
+        for(i=0;i<=9;i++){
+            for(j=0;j<=9;j++){
+                if (num[j]<num[j+1]){
+                    var tmp=num[j];
+                    num[j]=num[j+1];
+                    num[j+1]=tmp;
+                }
+            }
+        }
+        for(i=0;i<=9;i++){
+            document.write("<br>"+num[i]+"<br>");
+        }
+    }
+    function compare() {
+        console.log("44"<"6");
+    }
+
+    function mm() {
+        for(i=0;i<=9;i++){
+            document.write("输入第"+i+"个数：<input type='text' id='num"+i+"'><br>");
+        }
+    }
+    window.onload=mm();
+
+</script>
+<body>
+<input type="button" onclick="haha()" value="提交">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jjcfb</title>
+    <script>
+        function jjcfb() {
+            document.write("<table border='1'> ");
+            var i,j;
+            for(i=1;i<=9;i++){
+                document.write("<tr>");
+                for(j=1;j<=i;j++){
+                    document.write("<td>"+j+"*"+i+"="+i*j+"</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+        var obj={
+            a:"12345",
+            b:jjcfb
+        }
+        $(document).ready(obj.b());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background-color: #0c9076;
+        }
+    </style>
+</head>
+<body>
+<div id="example"></div>
+<script>
+    a();
+    var myObject={
+        Animal :function(name,age,sex){
+            this.name = name;
+            this.maximumAge=age;
+            this.sex=sex;
+            this.haha=function () {
+                console.log("haha");
+            }
+            this.showName = function(){
+                console.log("showwwwwName");
+            }
+
+        },
+        a:function () {
+            console.log("aaa");
+        },
+
+        Cat:function (name){
+            Animal.call(this, name);
+        },
+
+        f1:function (){
+            f1.prototype.add=function(){
+                console.log("gagaga");
+            }
+        },
+
+        haha:function () {
+            nn="wocao";
+        }
+
+    }
+    function Animal(name,age,sex){
+        this.name = name;
+        this.maximumAge=age;
+        this.sex=sex;
+        this.haha=function () {
+            console.log("haha");
+        }
+        this.showName = function(){
+            console.log("showwwwwName");
+        }
+
+    }
+    function a() {
+        console.log("aaa");
+    }
+
+    function Cat(name){
+        Animal.call(this, name);
+    }
+
+    var cat = new Cat("Black Cat","18","1");
+    console.log(typeof cat);
+    console.log(typeof Cat);
+    cat.showName();
+    console.log(Animal.prototype);
+    console.log(Cat.prototype);
+    console.log(cat.prototype);
+    function f1(){
+        f1.prototype.add=function(){
+            console.log("gagaga");
+        }
+    }
+
+    console.log(f1.prototype);
+    console.log(cat.prototype);
+    console.log(cat.__proto__);
+    console.log(Cat.prototype);
+    console.log(Cat.__proto__);
+
+    function haha() {
+        nn="wocao";
+    }
+    haha();
+    alert(nn);
+    console.log(0.1+0.2);
+
+
+
+
+
+
+</script>
+<div title="hahahah" id="div"></div>
+<script>
+    a=document.getElementById("div").getAttribute("title");
+
+
+    document.getElementById("div").appendChild(document.createElement("aaaaaa"));
+    console.log(document.getElementById("div").getAttribute("title"));
+    document.getElementById("div").setAttribute("title","heheheh");
+    alert(document.getElementById("div").getAttribute("title"));
+
+    var person1={
+        name:"ww",
+        age:23,
+        sex:"nan"
+    }
+    var person;
+    var person1=function(){
+        this.a=1,
+        this.b=2,
+        this.c=function () {
+            console.log("a");
+        }
+    };
+    var date=new Date(2016);
+    var array=new Array(1,2,3);
+    var reg=new RegExp(1);
+    var num=new Number(34);
+    var string =new String("asd");
+    var boolean=new Boolean(false);
+    person1.prototype.abc=function () {
+        console.log("aaaaaaa");
+    };
+
+</script>
+</body>
+
+
+</html>

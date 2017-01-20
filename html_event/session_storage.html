@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>storage</title>
+</head>
+<body>
+<p id="msg" ></p>
+<input type="text" id="input">
+<input type="button" value="保存数据" onclick="saveData()">
+<input type="button" value="读取数据" onclick="getData()">
+<input type="button" value="清除数据" onclick="deleteData()">
+<script>
+    function saveData() {
+        var data=document.getElementById("input");
+        var str=data.value;
+        sessionStorage.setItem("username",str);
+    }
+    function getData() {
+        var data=document.getElementById("msg");
+        var msg=sessionStorage.getItem("username");
+        data.innerHTML=msg;
+    }
+    function deleteData() {
+        sessionStorage.removeItem("username");
+    }
+    document.cookie="name=qwer"
+</script>
+</body>
+</html>

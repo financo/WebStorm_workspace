@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            margin-left: 100px;
+        }
+        p{
+            height: 500px;
+        }
+        ul{
+            position: fixed;
+            left: 5px;
+            top: 150px;
+        }
+        li{
+            margin: 5px auto;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .etitle{
+            display: none;
+        }
+        li:hover a{
+            display: none;
+        }
+        li:hover .etitle{
+            display: block;
+            background-color: red;
+            color: white;
+        }
+        .current a{
+            display: none;
+        }
+        .current .etitle{
+            display: block;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container">
+    <p>一，服饰</p>
+    <p>二，美妆</p>
+    <p>三，家具</p>
+    <p>四，生活</p>
+    <p>五，餐饮</p>
+    <ul id="floor">
+        <li>
+            <a href="javascript:;">1F</a>
+            <a href="javascript:;" class="etitle">服饰</a>
+        </li>
+        <li>
+            <a href="javascript:;">2F</a>
+            <a href="javascript:;" class="etitle">美妆</a>
+        </li>
+        <li>
+            <a href="javascript:;">3F</a>
+            <a href="javascript:;" class="etitle">家居</a>
+        </li>
+        <li>
+            <a href="javascript:;">4F</a>
+            <a href="javascript:;" class="etitle">生活</a>
+        </li>
+        <li>
+            <a href="javascript:;">5F</a>
+            <a href="javascript:;" class="etitle">餐饮</a>
+        </li>
+    </ul>
+</div>
+<script>
+    var container=document.getElementById("container");
+    var pTop=container.getElementsByTagName("p");
+    var floor=document.getElementById("floor");
+    var floorli=floor.getElementsByTagName("li");
+    window.onscroll=function () {
+        var sTop=document.body.scrollTop;
+        for (var i=0;i<pTop.length;i++){
+            var result=pTop[i].offsetTop-sTop;
+//            console.log(result);
+            if (result<250&&result>-250){
+                switch (i){
+                    case 0:
+                        for(i=0;i<floorli.length;i++){
+                            floorli[i].className="";
+                        }
+                        floorli[0].className="current";
+                        break;
+                    case 1:
+                        for(i=0;i<floorli.length;i++){
+                            floorli[i].className="";
+                        }
+                        floorli[1].className="current";
+                        break;
+                    case 2:
+                        for(i=0;i<floorli.length;i++){
+                            floorli[i].className="";
+                        }
+                        floorli[2].className="current";
+                        break;
+                    case 3:
+                        for(i=0;i<floorli.length;i++){
+                            floorli[i].className="";
+                        }
+                        floorli[3].className="current";
+                        break;
+                    case 4:
+                        for(i=0;i<floorli.length;i++){
+                            floorli[i].className="";
+                        }
+                        floorli[4].className="current";
+                        break;
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

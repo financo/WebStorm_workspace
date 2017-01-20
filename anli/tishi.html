@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tishi</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-size: 14px;
+            line-height: 1.8em;
+            font-family: sans-serif;
+        }
+        .container{
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px 30px;
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 0 10px rgba(0,0,0,0.2);
+        }
+        .container h2{
+            color: #000000;
+            font-size: 20px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .container .tooltip{
+            color: green;
+            cursor: pointer;
+        }
+        .tooltipbox{
+            display: block;
+            background-color: #ffffff;
+            line-height: 1.6em;
+            border-radius: 10px;
+            border: 1px solid green;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+    <h2>我要学习</h2>
+    <p>看见<a href="javascript:;" id="tooltip1" class="tooltip">划过</a> 看见看见看见看见看见看见看见看见看见看见看见看见看
+        看见看见看见看见看见看见看见看见看见
+        看见看见看见看见看见看见看见划过看见看见看见看见看见看见看见看见
+        看见看见看见看见看见看见看见看见看见看见看见看见看见看见看见看见看见看见
+        看见看见看见看见看见看见看见看见看见看见看见看见看见见看见看见看见看见</p>
+</div>
+<script>
+    function getDocID(id) {
+        return document.getElementById(id);
+    }
+    var parentDiv=getDocID("container");
+    var tooltipboxname="tooltipbox";
+    function showTipBox(obj,id,html,width) {
+        if(getDocID(id)==null){
+            var tooltipbox=null;
+            tooltipbox=document.createElement("div");
+            tooltipbox.className=tooltipboxname;
+            tooltipbox.id=id;
+            tooltipbox.innerHTML=html;
+            tooltipbox.style.width=width+"px";
+            tooltipbox.style.position="absolute";
+            var left=obj.offsetLeft;
+            var top=obj.offsetTop+20;
+            tooltipbox.style.left=left+"px";
+            tooltipbox.style.top=top+"px";
+            tooltipbox.style.display="block";
+            parentDiv.appendChild(tooltipbox);
+            obj.addEventListener("mouseout",function () {
+                getDocID(id).style.display="none";
+            },false)
+        }else {
+            getDocID(id).style.display="block";
+        }
+    }
+    parentDiv.addEventListener("mouseover",function (e) {
+        var target=e.target;
+        if (target.className=="tooltip"){
+            var html;
+            var id;
+            var width;
+            switch (target.id){
+                case "tooltip1":
+                    id="t1";
+                    html="就不告诉你";
+                    width=150;
+                    break;
+                case "tooltip2":
+                    id="t2";
+                    html="就不告诉你1";
+                    width=200;
+                    break;
+            }
+            showTipBox(target,id,html,width);
+        }
+    },false)
+</script>
+</body>
+</html>

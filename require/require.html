@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="companyReserve.js" type="text/javascript"></script>
+<script src="incomeTax.js" type="text/javascript"></script>
+<script src="performanceCoefficient.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    //基本工资
+    var salary = 1000;
+
+    //最终工资
+    var mySalary = salary + salary * performanceCoefficient();
+    mySalary = mySalary - companyReserve(mySalary) - incomeTax(mySalary - companyReserve(mySalary));
+    console.log(mySalary);
+
+
+</script>
+</body>
+</html>

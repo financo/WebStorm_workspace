@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            width: 40px;
+            height: 40px;
+            float: left;
+            margin-left: 10px;
+            border: #51ff40 solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="start"></div>
+    <div></div>
+    <button>gogogo</button>
+<script>
+    $(function () {
+        var start=$("#start");
+        start.css("background-color","#f99");
+        $("button").click(function () {
+            start=start.prev();
+            $("div").css("background-color","");
+            start.css("background-color","#f99");
+        })
+    })
+</script>
+</body>
+</html>

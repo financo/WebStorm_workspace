@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var c=1;
+    a();
+    function a() {
+        console.log("a"+c);
+        c++
+        var b=setTimeout("a()",3000);
+        if(c>5){
+            clearTimeout(b);
+        }
+        d=123;
+
+    }
+    window.onload=function(){
+       setTimeout("console.log('========'+c)",10000) ;
+    }
+</script>
+</body>
+</html>

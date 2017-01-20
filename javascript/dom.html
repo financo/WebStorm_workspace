@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 199px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div class="divclass" id="divid" name="div">内容</div>
+<script>
+    var obj=document.getElementsByClassName("divclass");
+    var obj1=document.getElementById("divid");
+    var obj2=document.getElementsByTagName("div");
+    var obj3=document.getElementsByName("div");
+    console.log(obj);
+    console.log(obj1);
+    console.log(obj2);
+    console.log(obj3);
+
+</script>
+</body>
+</html>

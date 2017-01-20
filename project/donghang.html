@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="东方航空新版APP" />
+    <meta name="description" content="东方航空新版APP" />
+
+    <title>客户端方法DEMO</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: "宋体";
+        }
+
+        body {
+            height: 100%;
+            font-size: 1em;
+        }
+
+
+        @media all and (max-width: 725px) {
+            #container {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+        }
+
+
+        .main{
+            background: #f9f9f9;
+            width:100%;
+            border-left:1px solid #e7e6e6;
+            border-right:1px solid #e7e6e6;
+            border-bottom:1px solid #e7e6e6;
+            -webkit-border-radius:7px;
+            -moz-border-radius:7px;
+            border-radius:7px;
+        }
+        .main h3{
+            background: #59A5F0;
+            width:100%;
+            padding-top:10px;
+            padding-bottom:10px;
+            font-size:14px;
+            text-align:left;
+            color:#fff;
+        }
+
+        .trybtn{
+            margin: auto 10px;
+        }
+
+        .divbtm{
+            color:#3a4149;
+            padding-top:10px;
+            padding-bottom:10px;
+        }
+
+        .table{
+            background-color: #CCCCCC;
+            width: 100%;
+            height: 40px;
+        }
+        .tr1{
+            align: center;
+        }
+        .td1{
+            width: 70px;
+        }
+
+    </style>
+
+    <script>
+        function tryfunc(funcname)
+        {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                // 调用登录，跳转到指定的url
+                if (funcname =="clickOnLogin"){
+                    clickOnLogin("http://www.ceair.com","登录成功后的标题","ffp_login");
+                    // 跳转到机票预订--国际秒杀
+                }else if (funcname =="registerInfoRoundTrip"){
+                    registerInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false','GJMS','MU123', 'MU321','Y','X');
+                    //跳转到订单页面填写
+                }else if(funcname =="registerOrderInfo"){
+                    registerOrderInfo('SHA','PEK','20150606','0','1','','','','','true','false', 'FFP', 'MU321', 'Y', 'QCZJ_D_OW', '', '', '');
+                    //JS通知客户端签到是否成功
+                }else if (funcname =="clickOngotoSign"){
+                    clickOngotoSign("true");//s="true"已签到  ，s="false"未签到
+                    //分享到微信或者朋友圈的特殊分享
+                }else if (funcname ==" clickOnwebchatshare"){
+                    clickOnwebchatshare("2","dggg","www.baidu.com","test();","testfail();" , "图片的链接");
+                    //调用支付功能
+                }else if (funcname =="clickOnpay"){
+                    clickOnpay('webchatPay','以#隔开的参数','','');
+                    //调用标题上的分享按钮
+                }else if (funcname =="clickOnTitleShare"){
+                    clickOnTitleShare('home','','','');
+                    //标题返回键
+                }else if (funcname ==" clickOnback"){
+                    clickOnback ('true' ,' 定义的方法名');
+                    //标题中间文字
+                }else if (funcname =="clickOntitle"){
+                    clickOntitle(标题);
+                    //标题右边HOME键
+                }else if (funcname =="clickOnhome"){
+                    clickOnhome ('true','方法名');
+                    //进入新页面的机票列表
+                }else if (funcname =="registerNewInfoRoundTrip"){
+                    registerNewInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false','GJMS','MU123', 'MU321','Y','X','true');
+                    //调用PDF方法
+                }else if (funcname =="registerInfoRoundTrip"){
+                    //registerInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false','GJMS','MU123', 'MU321','Y','X');
+                    //网络图片保存到相册
+                }else if (funcname =="clickOnLongSaveImgUrl"){
+                    clickOnLongSaveImgUrl('图片的下载地址');
+                    //获取设备基本信息
+                }else if (funcname =="clickOnVersion"){
+                    clickOnVersion('方法名');
+                    //调用滴滴专车
+                }else if (funcname =="clickOnDiDi"){
+                    clickOnDiDi();
+                    //长按图片保存
+                }else if (funcname =="clickOnLongSaveImgUrl"){
+                    clickOnLongSaveImgUrl("图片URl");
+                }
+
+
+
+
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+                if (funcname =="clickOnLogin"){
+                    alert("1111111111111");
+                    Login.clickOnLogin("http://www.ceair.com","登录成功后的标题","mobile_login");
+                }else if (funcname =="registerInfoRoundTrip"){
+                    alert("2222222222222");
+                    AirportRoundTrip.registerInfoRoundTrip('SHA','CAN','20161006','0','1','','','','','true','false', 'GJMS', 'MU123', 'MU321','Y','X');
+                    //跳转到订单页面填写
+                }else if(funcname =="registerOrderInfo"){
+                    alert("3333333333333");
+                    AirportOrder. registerOrderInfo ('SHA','PEK','20150606','0','1','','','','','true','false',  'FFP','MU321', 'Y', 'QCZJ_D_OW', '', '', '');
+                    //JS通知客户端签到是否成功
+                }else if (funcname =="clickOngotoSign"){
+                    alert("4444444444444");
+                    gotosign.clickOngotoSign('true');//s="true"已签到  ，s="false"未签到
+                    //分享到微信或者朋友圈的特殊分享
+                }else if (funcname =="clickOnwebchatshare"){
+                    alert("5555555555555");
+                    gotowebchatshare.clickOnwebchatshare('2','dggg','www.baidu.com','test();','testfail();' , '图片的链接');
+                    //调用支付功能
+                }else if (funcname =="clickOnpay"){
+                    alert("6666666666666");
+                    gotopay. clickOnpay('webchatPay','以#隔开的参数','','');
+                    //调用标题上的分享按钮
+                }else if (funcname =="clickOnTitleShare"){
+                    alert("7777777777777");
+                    gotoTitleShare.clickOnTitleShare('share','标题','网络图片链接','内容','url');
+                    //标题返回键
+                }else if (funcname =="clickOnback"){
+                    alert("8888888888888");
+                    gotoback.clickOnback ('true','定义的方法名');
+                    //标题中间文字
+                }else if (funcname =="clickOntitle"){
+                    alert("9999999999999");
+                    gototitle. clickOntitle(标题);
+                    //标题右边HOME键
+                }else if (funcname =="clickOnhome"){
+                    alert("aaaaaaaaaaaaa");
+                    gotohome. clickOnhome ('true','方法名');
+                    //进入新页面的机票列表
+                }else if (funcname =="registerNewInfoRoundTrip"){
+                    alert("bbbbbbbbbbbbb");
+                    AirportNewRoundTrip. registerNewInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false', 'GJMS', 'MU123', 'MU321','Y','X','true');
+
+                    //调用PDF方法
+                }else if (funcname =="clickOnPdf"){
+                    alert("ccccccccccccc");
+                    gotopdf.clickOnPdf('title','http://uat.allianz360.com/doc/申根之王-安联申根旅行保险条款（2016）.pdf');
+                    //网络图片保存到相册
+                }else if (funcname =="clickOnLongSaveImgUrl"){
+                    alert("ddddddddddddd");
+                    saveimgurl.clickOnLongSaveImgUrl('图片的下载地址');
+                    //获取设备基本信息
+                }else if (funcname =="clickOnVersion"){
+                    alert("eeeeeeeeeeeee");
+                    version.clickOnVersion('方法名');
+                    //调用滴滴专车
+                }else if (funcname =="clickOnDiDi"){
+                    alert("fffffffffffff");
+                    todidi.clickOnDiDi();
+                    //长按图片保存
+                }else if (funcname =="clickOnLongSaveImgUrl"){
+                    alert("gggggggggggggg");
+                    saveimgurl.clickOnLongSaveImgUrl("图片URl");
+                }
+
+
+
+            } else {
+                if (funcname =="clickOnLogin") {
+                    external.notify('clickOnAirport?http://www.ceair.com&登录成功后的标题&mobile_login');
+                }else if (funcname =="registerInfoRoundTrip"){
+                    external.notify('registerInfoRoundTrip?SHA&PEK&20150606&0&1&&&&&true&false&GJMS&MU123& MU321&Y&X');
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div id="container" class="container">
+
+    <div class="main" id="content1" style="display:none;">
+        <h3>1.登录</h3>
+
+        <table class="table">
+            <tr class="tr1">FUNCTION</tr>
+            <tr>
+                <td class="td1">android</td>
+                <td>Login.clickOnLogin</td>
+            </tr>
+            <tr>
+                <td class="td1">IOS</td>
+                <td>clickOnLogin</td>
+            </tr>
+            <tr>
+                <td class="td1">WP</td>
+                <td>external.notify</td>
+            </tr>
+        </table>
+
+        <table class="table">
+            <tr class="tr1">INPUT</tr>
+            <tr>
+                <td class="td1">url</td>
+                <td>登录成功后的地址</td>
+            </tr>
+            <tr>
+                <td class="td1">title</td>
+                <td>登录成功后的地址的标题</td>
+            </tr>
+            <tr>
+                <td class="td1">type</td>
+                <td>登录类型：普通登录("mobile_login")| 会员登录("ffp_login")</td>
+            </tr>
+        </table>
+        <!--[FUNCTION]-->
+        <!--android :-->
+        <!--Login.clickOnLogin-->
+        <!--IOS:-->
+        <!--clickOnLogin-->
+        <!--WP:-->
+        <!--external.notify-->
+
+        <!--[INPUT]-->
+        <!--url    登录成功后的地址-->
+        <!--title  登录成功后的地址的标题-->
+        <!--type   登录类型：普通登录("mobile_login")| 会员登录("ffp_login")-->
+
+
+        <xmp>
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnLogin("http://zsc.ceair.com","登录成功后的标题","ffp_login")
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            Login.clickOnLogin("http://zsc.ceair.com","登录成功后的标题","mobile_login")
+            } else {
+            external.notify('clickOnAirport?http://zsc.ceair.com&登录成功后的标题&mobile_login');
+            }
+            }
+
+            登录成功后会把用户信息加密串参数p,通过URL传过去。
+
+        </xmp>
+        <input type="button" class="trybtn" value="亲自试一试" onclick="tryfunc('clickOnLogin')"/>
+        <div class="divbtm"><h5>（请用手机APP测试，浏览器请绕行。）</h5></div>
+    </div>
+
+    <div class="main" id="content2" style="display:none;">
+        <h3>2.直接进入国际秒杀</h3>
+
+        <xmp>
+            [FUNCTION]
+            android :
+            AirportRoundTrip.registerInfoRoundTrip
+            IOS:
+            registerInfoRoundTrip
+            WP:
+            external.notify
+
+            [INPUT]
+            orgcode        出发城市三字码，
+            dstcode        到大城市三字码，
+            time           出发时间，如20150101，
+            cabin_index    舱位: 0 所有舱位 | 1 经济舱 | 2经济全价舱 | 3头等舱 |4公务舱，
+            triptype       1 单程 | 2 往返，
+            nextorgcode    往返出发城市，
+            nextdstcode    往返到达三字码，
+            nexttripdate   往返时间，如20150101，
+            flightype      331 国内 | 332 国际，
+            isRMB          true 人民币 |  flase积分，
+            isB2G          true B2G版本 | flase 正常版本，
+            searchType     需传活动标识字段，默认为空，到时可约定，预留 如：DOUBLE_11 双十一直接活动      TJJP 特价机票      FHC 加110享头等舱     TQJ 探亲假  GJMS国际秒杀
+            flightNo       去程的航班号
+            nextFlightNo   回程的航班号
+            cabinCode      去成的具体舱位
+            nextCabinCode  回程的具体舱位
+
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            registerInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false', 'GJMS', 'MU123', 'MU321','Y','X');
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            AirportRoundTrip.registerInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false', 'GJMS', 'MU123', 'MU321','Y','X');
+            } else {
+            external.notify('registerInfoRoundTrip?SHA&PEK&20150606&0&1&&&&&true&false&GJMS&MU123& MU321&Y&X');
+            }
+            }
+
+        </xmp>
+        <input type="button" class="trybtn" value="亲自试一试" onclick="tryfunc('registerInfoRoundTrip')"/>
+        <div class="divbtm"><h5>（请用手机APP测试，浏览器请绕行。）</h5></div>
+    </div>
+
+    <div class="main" id="content3" style="display:none;">
+        <h3>3.直接进入订单填写页面</h3>
+
+        <xmp>
+            [FUNCTION]
+            android :
+            AirportOrder. registerOrderInfo
+            IOS:
+            registerOrderInfo
+
+
+            [INPUT]
+            orgcode                 出发城市三字码，
+            dstcode                 到大城市三字码，
+            time                    出发时间，如20150101，
+            cabin_index             舱位: 0 所有舱位 | 1 经济舱 | 2经济全价舱 | 3头等舱 | 4公务舱，
+            triptype                1 单程 | 2 往返，
+            nextorgcode             往返出发城市，
+            nextdstcode             往返到达三字码，
+            nexttripdate            往返时间，如20150101，
+            flightype               331 国内 | 332 国际，
+            isRMB  true             人民币 | flase积分，
+            isB2G  true             B2G版本 | flase 正常版本，
+            needlogintype           登录信息 如： FFP会员登录
+            specialFlightNo         去程的航班号
+            specialCabinCode        去程的舱位
+            specialProductCode      去程的产品code
+            nextSpecialFlightNo     回程的航班号
+            nextSpecialCabinCode    回程的舱位
+            nextSpecialProductCode  回程的产品code
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            registerOrderInfo('SHA','PEK','20150606','0','1','','','','','true','false', 'FFP', 'MU321', 'Y', 'QCZJ_D_OW', '', '', '');
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            AirportOrder. registerOrderInfo ('SHA','PEK','20150606','0','1','','','','','true','false',  'FFP','MU321', 'Y', 'QCZJ_D_OW', '', '', '');
+            }
+            }
+
+        </xmp>
+        <input type="button" class="trybtn" value="亲自试一试" onclick="tryfunc('registerOrderInfo')"/>
+        <div class="divbtm"><h5>（请用手机APP测试，浏览器请绕行。）</h5></div>
+    </div>
+
+    <div class="main" id="content4" style="display:none;">
+        <h3>4.JS通知客户端签到成功与否</h3>
+
+        <xmp>
+            [FUNCTION]
+            android :
+            gotosign.clickOngotoSign
+            IOS:
+            clickOngotoSign
+
+
+            [INPUT]
+            s="true"已签到  |  s="false"未签到
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOngotoSign(“true”)//s="true"已签到  ，s="false"未签到;
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            gotosign.clickOngotoSign(‘true’)//s="true"已签到  ，s="false"未签到;
+            }
+            }
+
+        </xmp>
+        <input type="button" class="trybtn" value="亲自试一试" onclick="tryfunc('clickOngotoSign')"/>
+        <div class="divbtm"><h5>（请用手机APP测试，浏览器请绕行。）</h5></div>
+    </div>
+
+    <div class="main" id="content5" style="display:none;">
+        <h3>5.JS分享到微信或者朋友圈的特殊分享（更新）</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+
+            [INPUT]
+            需传入6个参数，（支持标题，图片的链接地址，文字，链接,分享成功的H5的方法，分享失败的H5的方法）
+
+            [EXAMPLE]
+            <!DOCTYPE html>
+            <html>
+            <head lang="zh-cn">
+                <meta charset="UTF-8">
+                <title>webchatshare</title>
+            </head>
+            <body>
+            <script>
+                function test(){
+                    alert("success")
+                }
+                function testfail(){
+                    alert("fail")
+                }
+                6.4.0
+                function fn(){
+                    gotowebchatshare.clickOnwebchatshare(
+                            '2','dggg','www.baidu.com','test();','testfail();' , "图片的链接");
+                }
+                6.4.0之前
+                function fn(){
+                    gotowebchatshare.clickOnwebchatshare(
+                            '2','dggg','www.baidu.com','test();','testfail();');
+                }
+
+                function fn_ios(){
+                    clickOnwebchatshare("2",
+                            "dggg","www.baidu.com","test();","testfail();" , "图片的链接");
+                }
+            </script>
+            <a href="javascript:fn()">测试按钮AD </a>
+            <a href="javascript:fn_ios()">测试按钮IOS</a>
+            </body>
+            </html>
+        </xmp>
+        <input type="button" class="trybtn" value="亲自试一试" onclick="tryfunc('clickOnwebchatshare')"/>
+        <div class="divbtm"><h5>（请用手机APP测试，浏览器请绕行。）</h5></div>
+    </div>
+
+    <div class="main" id="content6" style="display:none;">
+        <h3>6.JS调用支付功能</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            gotopay. clickOnpay
+            IOS:
+            clickOnpay
+
+
+            [INPUT]
+            共有4个参数，依次为
+            类型             第一个参数支持三中支付类型（alix为支付宝支付，unionPay为银联支付，webchatPay为微信支付），当为微信支付时
+            参数             第二个参数的内容以#隔开，分别代表（webchatPay#nonceStr#packageValue#partnerId#prepayId#timeStamp#sign）
+            支付成功的URL     第三个参数如果没有，写空字符串.
+            支付失败的URL     第四个参数如果没有，写空字符串.
+            注：微信支付不支持失败时候的回调。
+
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnpay(‘webchatPay‘，’以#隔开的参数’,’’,’’)
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            gotopay. clickOnpay(‘webchatPay‘，’以#隔开的参数’,’’,’’)
+            }
+            }
+
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnpay')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnpay')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content7" style="display:none;">
+        <h3>7.JS调用标题上的分享按钮（更新）</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            gotoTitleShare.clickOnTitleShare
+            IOS:
+            clickOnTitleShare
+
+            [INPUT]
+            共有5个参数，依次为
+            类型        第一个参数如果为“share”，则右上角的图片变为分享的图片，且点击事件为分享的事件；
+            如果第一个参数为“home”，则右上角的图片变为home的图片，且点击事件为原先默认的事件。
+            分享的标题
+            网络图片链接
+            分享的内容
+            分享的的URL
+
+            注：此方法不要与gotohome. clickOnhome(“”,””) 同时使用
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnTitleShare('home','',’’,’’)
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            gotoTitleShare.clickOnTitleShare('share','标题',’网络图片链接’,’内容’,’url’)
+            }
+            }
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnTitleShare')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnTitleShare')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content8" style="display:none;">
+        <h3>8.标题的返回键</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            gotoback.clickOnback
+            IOS:
+            clickOnback
+            WP:
+            external.notify
+
+            [INPUT]
+
+            需传2个参数 ： stringflag   stringfunction
+            stringflag传 true时表示执行H5的本身的callback 并且stringfunction不为空时执行stringfunction的方法（注意：为空代表传一个空的字符串）
+
+            stringflag传 false时表示执行APP本身的返回逻辑
+
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnback (‘true’ ,’ 定义的方法名’)
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            gotoback.clickOnback (‘true’,’ 定义的方法名’)
+            } else {
+            external.notify('clickOnback?true&定义方法名');
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnback')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnback')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content9" style="display:none;">
+        <h3>9.标题的中间的文字</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            gototitle. clickOntitle
+            IOS:
+            clickOntitle
+            WP:
+            external.notify
+
+            [INPUT]
+            需传1个参数 ： string
+            string为标题的文字
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOntitle(标题)
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            gototitle. clickOntitle(标题)
+            } else  {
+            external.notify('clickOntitle?标题');
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOntitle')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOntitle')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content10" style="display:none;">
+        <h3>10.标题的右边的HOME键</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            gotohome. clickOnhome
+            IOS:
+            clickOnhome
+            WP:
+            external.notify
+
+            [INPUT]
+            需传2个参数 ： stringflag   stringfunction
+            stringflag传 true时表示显示HOME并且stringfunction不为空时执行stringfunction的方法，stringfunction为空时表示执行原先的APP逻辑（注意：为空代表传一个空的字符串）
+            stringflag传 false时表示隐藏HOME
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnhome (‘true’,’方法名’)
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            gotohome. clickOnhome (‘true’,’方法名’)
+            } else  {
+            external.notify('clickOnhome?true&方法名');
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnhome')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnhome')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content11" style="display:none;">
+        <h3>11.直接进入新页面的机票列表</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            AirportNewRoundTrip. registerNewInfoRoundTrip
+            IOS:
+            registerNewInfoRoundTrip
+            WP:
+            external.notify
+
+            [INPUT]
+            registerNewInfoRoundTrip方法需传13个参数，顺序如下
+            orgcode         出发城市三字码，
+            dstcode         到大城市三字码，
+            time            出发时间，如20150101，
+            cabin_index     舱位 | 0 所有舱位 | 1 经济舱 | 2 经济全价舱 | 3 头等舱 | 4 公务舱，
+            triptype        1 单程 | 2 往返，
+            nextorgcode     往返出发城市，
+            nextdstcode     往返到达三字码，
+            nexttripdate    往返时间，如20150101，
+            flightype       331 国内 | 332 国际，
+            isRMB           true 人民币 |  flase积分，
+            isB2G           true B2G版本 | flase 正常版本，
+            searchType      需传活动标识字段，默认为空，到时可约定，预留 如：DOUBLE_11 双十一直接活动 | TJJP 特价机票 | FHC 加110享头等舱 | TQJ 探亲假 | GJMS国际秒杀
+            flightNo        去程的航班号
+            nextFlightNo    回程的航班号
+            cabinCode       去成的具体舱位
+            nextCabinCode   回程的具体舱位
+            isNewType       true 新版本 | false 老版本
+
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            registerNewInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false','GJMS','MU123', 'MU321','Y','X',’true’)
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            AirportNewRoundTrip. registerNewInfoRoundTrip('SHA','PEK','20150606','0','1','','','','','true','false', 'GJMS', 'MU123', 'MU321','Y','X',’true’)
+            } else  {
+            external.notify('registerInfoRoundTrip?SHA&PEK&20150606&0&1&&&&&true&false&GJMS&MU123& MU321&Y&X&true');
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('registerNewInfoRoundTrip')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('registerNewInfoRoundTrip')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content12" style="display:none;">
+        <h3>12.JS调用PDF方法</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            gotopdf.clickOnPdf
+
+
+            [INPUT]
+            此方法有2个参数，第一个为标题，第二个为URL
+            注：此方法只支持Android，IOS正常调用即可。
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            gotopdf.clickOnPdf('title','http://uat.allianz360.com/doc/申根之王-安联申根旅行保险条款（2016）.pdf')
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnPdf')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content13" style="display:none;">
+        <h3>13.网络图片保存到相册</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            saveimgurl.clickOnLongSaveImgUrl
+            IOS:
+            clickOnLongSaveImgUrl
+
+            [INPUT]
+            图片下载地址
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnLongSaveImgUrl('图片的下载地址')
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            saveimgurl.clickOnLongSaveImgUrl('图片的下载地址')
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnLongSaveImgUrl')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnLongSaveImgUrl')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content14" style="display:none;">
+        <h3>14.获取设备基本信息</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            version.clickOnVersion
+            IOS:
+            clickOnVersion
+
+
+            [INPUT]
+            此方法有一个参数，为H5的对应方法名，其中H5对应的方法，有4个参数，分别为版本号、
+            设备号、分辨率、渠道号,客户端会传过来
+            android :
+            version.clickOnVersion('方法名');
+            IOS:
+            clickOnVersion('方法名');
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnLogin("http://zsc.ceair.com","登录成功后的标题","ffp_login")
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            Login.clickOnLogin("http://zsc.ceair.com","登录成功后的标题","mobile_login")
+            } else {
+            external.notify('clickOnAirport?http://zsc.ceair.com&登录成功后的标题&mobile_login');
+            }
+            }
+
+            [EXAMPLE]
+            例：function myfun(p1,p2,p3,p4){ //4个参数，分别为版本号、设备号、分辨率、渠道号
+            alert(p1+","+p2+","+p3+","+p4);}
+
+            function to_fun_ad(){
+            version.clickOnVersion('myfun')}
+
+            function to_fun_ios(){
+            clickOnVersion("myfun")
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnVersion')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnVersion')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content15" style="display:none;">
+        <h3>15.JS调用滴滴专车</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            todidi.clickOnDiDi
+            IOS:
+            clickOnDiDi
+
+
+            [INPUT]
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnDiDi()
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            todidi.clickOnDiDi()
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnDiDi')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnDiDi')"/>
+        </form>
+    </div>
+
+    <div class="main" id="content16" style="display:none;">
+        <h3>16.JS调用长按保存图片</h3>
+        <xmp>
+            [FUNCTION]
+            android :
+            saveimgurl.clickOnLongSaveImgUrl
+            IOS:
+            clickOnLongSaveImgUrl
+
+
+            [INPUT]
+            图片url
+
+            [EXAMPLE]
+            function test() {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            clickOnLongSaveImgUrl("图片URl")
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+            saveimgurl.clickOnLongSaveImgUrl("图片URl")
+            }
+            }
+
+        </xmp>
+        <form>
+            <input type="button" value="AD测试" onclick="tryfunc('clickOnLongSaveImgUrl')"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value=IOS测试" onclick="tryfunc('clickOnLongSaveImgUrl')"/>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    var urlInfo  = window.location.href;
+    var urlLen   = urlInfo.length;
+    var setStart = urlInfo.indexOf("?");
+    var index    = urlInfo.substr(setStart+7,urlLen);
+
+    for(var i=1; i<=100; i++)
+    {
+        if(i == index)
+        {
+            document.getElementById("content" + i).style.display = "block";
+        }
+        else
+        {
+            document.getElementById("content" + i).style.display= "none";
+        }
+    }
+</script>
+
+</body>
+</html>
+

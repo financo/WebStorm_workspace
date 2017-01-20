@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #inner{
+            width: 100px;
+            height: 100px;
+            background-color: #0000FF;
+        }
+        #outer{
+            width: 200px;
+            height: 200px;
+            background-color: #E8E8E8;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">haha</div>
+
+</div>
+<div width="100px">
+    <ul>
+        <li width="40">1</li>
+        <li width="40">2</li>
+        <li width="40">3</li>
+        <li width="40">4</li>
+    </ul>
+</div>
+<script>
+    var inner=document.getElementById("inner");
+    inner.addEventListener("click",function(event){
+        console.log(event);
+        console.log(event.target.innerHTML);
+    },true )
+</script>
+</body>
+</html>

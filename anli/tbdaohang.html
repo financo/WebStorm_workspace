@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+            font-size: 12px;
+        }
+        .tab{
+            width: 298px;
+            height: 100px;
+            border: 1px solid #eeeeee;
+            margin: 10px;
+            overflow: hidden;
+        }
+        .tab-title{
+            height: 27px;
+            background-color: #f7f7f7;
+            position: relative;
+        }
+        .tab-title ul{
+            width: 300px;
+            position: absolute;
+            left: -1px;
+        }
+        .tab-title ul li{
+            float: left;
+            border-bottom: 1px solid #eeeeee;
+            width: 58px;
+            height: 26px;
+            text-align: center;
+            line-height: 26px;
+            padding: 0 1px;
+        }
+        .tab .tab-title  .select{
+            background-color: #ffffff;
+            border-bottom: #ffffff;
+            border-left: 1px solid #eeeeee;
+            border-right: 1px solid #eeeeee;
+            padding: 0px;
+        }
+        .tab .tab-content .tabact{
+            overflow: hidden;
+        }
+        .tab li a:link,.tab li a:visited{
+            text-decoration: none;
+            color: black;
+        }
+        .tab .tab-content .tabact{
+            margin: 20px 10px;
+        }
+        .tab .tab-content .tabact ul li{
+            float: left;
+            height:25px;
+            width: 139px;
+        }
+        .tab li a:hover{
+            color: #f90;
+            font-weight: 700;
+        }
+        .tab-content .tabact ul li a{
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="tab" id="tab">
+    <div class="tab-title" id="tab-title">
+        <ul>
+            <li class="select"><a href="">公告</a> </li>
+            <li><a href="">规则</a> </li>
+            <li><a href="">论坛</a> </li>
+            <li><a href="">安全</a> </li>
+            <li><a href="">公益</a> </li>
+        </ul>
+    </div>
+    <div class="tab-content" id="tab-content">
+        <div class="tabact">
+            <ul>
+                <li><a href="">阿里电商交易额破1万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+            </ul>
+        </div>
+        <div class="tabact">
+            <ul>
+                <li><a href="">阿里电商交易额破2万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+            </ul>
+        </div>
+        <div class="tabact">
+            <ul>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+            </ul>
+        </div>
+        <div class="tabact">
+            <ul>
+                <li><a href="">阿里电商交易额破4万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+            </ul>
+        </div>
+        <div class="tabact">
+            <ul>
+                <li><a href="">阿里电商交易额破5万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+                <li><a href="">阿里电商交易额破3万亿</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    var titleName=document.getElementById("tab-title").getElementsByTagName("li");
+    var tabContent=document.getElementById("tab-content").getElementsByTagName("div");
+    var timer=null;
+    if (titleName.length==tabContent.length){
+        for(var i=0;i<titleName.length;i++){
+            titleName[i].value=i;
+            titleName[i].onmousemove=function () {
+                var currentthis=this;
+                timer=setTimeout(function () {
+                    for (var j=0;j<titleName.length;j++){
+                        titleName[j].className="";
+                        tabContent[j].style.display="none"
+                    }
+                    currentthis.className="select";
+                    tabContent[currentthis.value].style.display="block";
+                },300);
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #333;
+}
+.box{
+    width: 1000px;
+    height: 220px;
+    margin: 50px auto;
+}
+.box .link{
+    float: left;
+    margin: 0px 20px;
+    width: 205px;
+    height: 280px;
+    position: relative;
+}

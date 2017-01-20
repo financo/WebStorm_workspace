@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//求得绩效系数
+var performanceCoefficient = function () {
+return 0.2;
+};
+
+//住房公积金计算方式
+var companyReserve = function (salary) {
+return salary * 0.2;
+};
+
+//个人所得税
+var incomeTax = function (salary) {
+return salary * 0.2;
+};
+
+//基本工资
+var salary = 1000;
+
+//最终工资
+var mySalary = salary + salary * performanceCoefficient();
+mySalary = mySalary - companyReserve(mySalary) - incomeTax(mySalary - companyReserve(mySalary));
+console.log(mySalary);
+</script>
+</body>
+</html>

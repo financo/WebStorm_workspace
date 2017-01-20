@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .map { background: gray; border: 1px solid black; position: relative; margin: 50px auto; width: 416px; height: 416px; }
+        .tank { background-image: url("http://images.cnitblog.com/blog/294743/201306/12123133-eaa9ada8690e4216a2bee3e56442e032.gif"); background-repeat: no-repeat; overflow: hidden; position: absolute; width: 32px; height: 32px; z-index: 3; }
+        .bullet { background-image: url('http://images.cnitblog.com/blog/294743/201306/12123510-662de29d9e0c447389b42fcb47bff652.gif'); width: 8px; height: 8px; position: absolute; z-index: 4; background-repeat: no-repeat; }
+        .Boom { background-image: url('http://images.cnitblog.com/blog/294743/201306/12121341-0e6fba003915418a909cde86d0b8aac6.png'); width: 64px; height: 64px; position: absolute; z-index: 4; }
+    </style>
+    <script type="text/javascript" src="require.js"></script>
+    <script type="text/javascript">
+        require(["js"]);
+    </script>
+</head>
+<body>
+<div class="map" id="map">
+    <div id="me" class="tank">
+    </div>
+</div>
+</body>
+</html>
+
+完整代码
