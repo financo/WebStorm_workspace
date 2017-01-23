@@ -11,7 +11,7 @@ function prepareSlideShow() {
     slideshow.setAttribute("id","slideshow");
 
     var preview=document.createElement("img");
-    preview.setAttribute("src","1 1.jpg");
+    preview.setAttribute("src","1.jpg");
     preview.setAttribute("alt","building blocks of web design");
     preview.setAttribute("id","preview");
 
