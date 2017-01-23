@@ -5,6 +5,7 @@
     <style type="text/css" media="screen">
         @import "layout.css";
     </style>
+    <script src="../L01/jquery-3.1.1.min.js"></script>
     <title>Web Design</title>
 </head>
 <body>
@@ -24,5 +25,39 @@
 <div id="content">
     <img src="1.jpg" id="img">
 </div>
+<script type="text/javascript">
+    var movement;
+    function moveTo(x) {
+        if(movement){
+            clearTimeout(movement);
+        }
+        var img=$('#img')[0];
+        if (!img.style.left){
+            img.style.left='0px';
+        }
+
+        xpos=parseInt(img.style.left);
+        if(xpos==x)return;
+        if(x<xpos){
+            var speed=Math.ceil((xpos-x)/10);
+            xpos-=speed;
+        }else{
+            speed=Math.ceil((xpos-x)/10);
+            xpos-=speed;
+        }
+        img.style.left=xpos+'px';
+        movement=setTimeout("moveTo("+x+")",10);
+    }
+
+    function prepare() {
+        var ele=document.getElementsByTagName('li');
+        for (var i=0;i<ele.length;i++){
+            ele[i].onmouseover=(function (num) {
+                return function(){moveTo(-100*(num+1));};
+            })(i);
+        }
+    }
+    window.onload=prepare();
+</script>
 </body>
 </html>

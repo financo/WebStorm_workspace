@@ -5,6 +5,7 @@
     position: relative;
 }
 #img{
+    position: absolute;
     width: 400px;
     height: 100px;
 }
